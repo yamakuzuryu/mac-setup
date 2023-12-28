@@ -1,10 +1,14 @@
-###############################################################
+################################################################
 # Bohmanart ZSH  Aliases, Functions, Plugins and Configuration #
-###############################################################
+################################################################
 
 # NVM
-export NVM_DIR="/Users/mbohman/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Node
+export NODE_OPTIONS="--max-old-space-size=4096"
 
 # Yarn
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

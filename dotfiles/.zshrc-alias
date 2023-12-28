@@ -1,3 +1,7 @@
+# Yarn
+alias y.i='yarn install'
+alias y.s='yarn start'
+
 # Git
 alias g.a='git add .'
 
@@ -12,8 +16,8 @@ alias g.br.deleteMergedRemote='git branch -r --merged origin/master | grep bohma
 
 alias g.ch='git checkout' # switch branch
 
-alias g.co='git commit -a'
-alias g.co.message='git commit -am'
+alias g.co='git commit -a' # stages files for commit
+alias g.co.message='git commit -am' # stages files for commit with message
 alias g.co.amend='git commit --amend --reuse-message=HEAD'
 
 alias g.d='git diff'
@@ -44,19 +48,26 @@ alias g.cherry='git cherry-pick' # cherry pick a commit to another branch
 
 alias g.contribs='git shortlog -sn --all'
 
-alias g.log='git log --graph --oneline --decorate --all --follow'
-alias g.log.pretty='git log --pretty=format:"%h %ad %s" --date=short --all --follow'
+alias g.log='git log --all --decorate --oneline --graph'
+alias g.log.pretty='g.log --date=short --no-merges --pretty=format:"%C(bold blue)%h%C(reset) - %C(bold green)%ad%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)"'
 
-alias g.stash='git stash'
-alias g.stash.apply='git stash apply'
-alias g.stash.drop='git stash drop'
-alias g.stash.list='git stash list'
-alias g.stash.pop='git stash pop'
-alias g.stash.save='git stash save'
+alias g.stash='git stash -u' # stash working directory of changes including untracked files
+alias g.stash.apply='git stash apply' # applies stash but leaves it in the list
+alias g.stash.clear='git stash clear' # removes all stashes from the list
+alias g.stash.drop='git stash drop' # removes stash from the list
+alias g.stash.list='git stash list' # show list of stashes
+alias g.stash.pop='git stash pop' # applies stash and removes it from the list
+alias g.stash.save='git stash save -u' # stash working directory of changes including untracked files with a specified name
+alias g.stash.show='git stash show' # show stash differences
 
 # Misc
-alias killnode='sudo killall node'
+alias kill.node='sudo killall node'
+alias kill.jamf='sudo killall com.jamf.protect.security-extension'
 
-# ZSH Profile
-alias zshrc='vim ~/.zshrc'
-alias zshrcs='source ~/.zshrc'
+# Edit Files
+alias edit.gitconfig='code ~/.gitconfig'
+alias edit.zshrc='code ~/.zshrc'
+
+# Source Files
+alias source.gitconfig='source ~/.gitconfig'
+alias source.zshrc='source ~/.zshrc'
