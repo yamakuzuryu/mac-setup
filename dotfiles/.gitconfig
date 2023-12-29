@@ -1,3 +1,7 @@
+##############################
+# Bohmanart Git Configuration #
+##############################
+
 [core]
 	excludesFile = ~/.gitignore
 

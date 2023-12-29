@@ -1,7 +1,7 @@
 #!/bin/bash
-##########################################
-# Script for setting up a MacOS machine  #
-##########################################
+###################################################
+# Bohmanart Script for setting up a MacOS machine #
+###################################################
 
 # Xcode Command Line Tools (Homebrew installs this now)
 # echo "Installing Xcode Command Line Tools..."

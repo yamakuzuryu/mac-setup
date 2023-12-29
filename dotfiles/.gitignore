@@ -1,7 +1,11 @@
-# Compiled source #
+######################################
+# Bohmanart Git Global Ignored Files #
+######################################
+
+# Compiled Source #
 ###################
-*.com
 *.class
+*.com
 *.dll
 *.exe
 *.o
@@ -9,8 +13,6 @@
 
 # Packages #
 ############
-# it's better to unpack these files and commit the raw source
-# git has its own built in compression methods
 *.7z
 *.dmg
 *.gz
@@ -20,26 +22,26 @@
 *.tar
 *.zip
 
-# Logs and databases #
+# Logs and Databases #
 ######################
 *.log
 *.sql
 *.sqlite
 
-# OS generated files #
+# OS Generated Files #
 ######################
 .DS_Store
 .DS_Store?
-._*
 .Spotlight-V100
 .Trashes
-ehthumbs.db
+._*
 Thumbs.db
+ehthumbs.db
 
-# App generated files #
+# App Generated Files #
 #######################
 .vscode
 
-# Other files #
+# Other Files #
 ###############
 jsconfig.json

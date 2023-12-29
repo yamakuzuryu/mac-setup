@@ -1,4 +1,4 @@
-,install xcode cli tools
+install xcode cli tools
 
 `xcode-select --install`
 

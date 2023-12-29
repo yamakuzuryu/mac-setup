@@ -1,15 +1,17 @@
-##########################################
-# Brewfile: Install all the MacOS things! #
-##########################################
+###################################################
+# Bohmanart Brewfile to install MacOS Applications #
+###################################################
 
-# Taps
+# Taps #
+########
 tap 'homebrew/bundle'
 tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/core'
 tap 'homebrew/services'
 
-# Formulae
+# Formulae #
+############
 brew 'docker' # Pack, ship and run any application as a lightweight container
 brew 'docker-compose' # Isolated development environments using Docker
 brew 'git' # Distributed revision control system
@@ -23,7 +25,8 @@ brew 'youtube-dl' # Download YouTube videos from the command-line
 brew 'zsh' # UNIX shell (command interpreter)
 brew 'zsh-completions' # Additional completion definitions for zsh
 
-# Casks
+# Casks #
+#########
 cask_args appdir: '/Applications'
 cask 'alfred' # Application launcher and productivity software
 cask 'boop' # Scriptable scratchpad for developers
@@ -60,12 +63,14 @@ cask 'vlc' # Multimedia player
 cask 'xscope' # Tools for measuring, inspecting & testing on-screen graphics and layouts
 cask 'zoom' # Video communication and virtual meeting platform
 
-# Fonts
+# Fonts #
+#########
 cask 'font-fira-code'
 cask 'font-input-mono'
 cask 'font-victor-mono'
 
-# Mac App Store
+# Mac App Store #
+#################
 mas 'Affinity Photo', id: 824183456
 # mas 'Boop', id: 1518425043
 # mas 'GeoTag', id: 1465180184
