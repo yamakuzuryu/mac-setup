@@ -1,34 +1,37 @@
-install xcode cli tools
+# Todos
 
-`xcode-select --install`
+## Checklist
 
+- [x] [Install brew](#install-brew)
+- [x] [Install brewfile](#install-brewfile)
+- [ ] [Install oh my zsh](#install-oh-my-zsh)
+- [ ] [Install dotfiles](#install-dotfiles)
+- [ ] [Config vscode cli](#config-vscode-cli)
+- [ ] [Config vscode](#config-vscode)
 
-install brew
+## Install brew
 
 `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 
-
-install brew bundle (Brewfile)
+## Install brewfile
 
 `brew bundle install`
 
 (to create a Brewfile: `brew bundle dump`)
 
-
-install oh my zsh
+## Install oh my zsh
 
 `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 
+## Install dotfiles
 
-install dotfiles
+## Config vscode cli
 
-
-config vscode cli
-```
+``` bash
 cat << EOF >> ~/.zprofile
 # Add Visual Studio Code (code)
 export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 EOF
 ```
 
-config vscode?
+## Config vscode
