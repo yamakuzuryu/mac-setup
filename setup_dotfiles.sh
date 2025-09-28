@@ -5,6 +5,7 @@
 ## Run script `./setup_dotfiles.sh`
 ## Choose between iCloud or Google Drive for storing dotfiles
 ## First Run: The script will detect no files in the selected cloud service and copy your dotfiles there
+##           Files are stored without the leading dot and with a .zsh extension (e.g., .zshrc → zshrc.zsh)
 ## Subsequent Runs on Same Computer: The script will skip files already set up
 ## Running on New Computer: The script will detect files in the cloud service and create symlinks
 ## Adding New Dotfiles: Add to the DOTFILES array and run again - only new files will be processed
@@ -118,19 +119,34 @@ for dotfile in "${DOTFILES[@]}"; do
 	dir_path=$(dirname "$dotfile")
 	file_name=$(basename "$dotfile")
 	target_dir="$DOTFILES_DIR/$dir_path"
-	target_file="$target_dir/${file_name#.}"  # Remove the dot for storage
+	target_file="$target_dir/${file_name#.}.zsh"  # Remove the dot and add .zsh extension
 	source_file="$HOME/$dotfile"
 
-	# Check if file exists in cloud storage
+	# Check if file exists in cloud storage (including backwards compatibility)
 	FILE_IN_CLOUD=false
+	old_target_file="$target_dir/${file_name#.}" # For backwards compatibility with old format
+	
 	if [ -f "$target_file" ]; then
+		FILE_IN_CLOUD=true
+	elif [ -f "$old_target_file" ]; then
+		# Handle migration from old format to new format
+		print_message "Migrating $dotfile from old format to new format with .zsh extension..." "$YELLOW"
+		mv "$old_target_file" "$target_file"
 		FILE_IN_CLOUD=true
 	fi
 
-	# Check if proper symlink exists
+	# Check if proper symlink exists (including backwards compatibility with non-.zsh files)
 	SYMLINK_EXISTS=false
-	if [ -L "$source_file" ] && [ "$(readlink "$source_file")" = "$target_file" ]; then
+	old_target_file="$target_dir/${file_name#.}" # For backwards compatibility with old format
+	if [ -L "$source_file" ] && { [ "$(readlink "$source_file")" = "$target_file" ] || [ "$(readlink "$source_file")" = "$old_target_file" ]; }; then
 		SYMLINK_EXISTS=true
+		
+		# If using old format, update symlink to new format if new format file exists
+		if [ "$(readlink "$source_file")" = "$old_target_file" ] && [ -f "$target_file" ]; then
+			rm "$source_file"
+			ln -s "$target_file" "$source_file"
+			print_message "Updated symlink for $dotfile to use .zsh extension format" "$GREEN"
+		fi
 	fi
 
 	# Case 1: File exists in cloud storage and symlink is correct - skip
