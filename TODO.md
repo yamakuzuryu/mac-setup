@@ -8,6 +8,7 @@
 - [x] [Install dotfiles](#install-dotfiles)
 - [x] [Config vscode cli](#config-vscode-cli)
 - [ ] [Config vscode](#config-vscode)
+- [ ] Add mac settings dotfile
 
 ## Install brew
 

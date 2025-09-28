@@ -20,7 +20,8 @@ brew bundle --file=./Brewfile --verbose
 # Install Oh My Zsh if not already installed
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
 	echo "Installing Oh My Zsh..."
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	# Use RUNZSH=no to prevent Oh My Zsh from starting a new shell session after installation
+	RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 else
 	echo "Oh My Zsh is already installed. Skipping installation."
 fi
