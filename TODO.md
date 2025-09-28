@@ -6,7 +6,7 @@
 - [x] [Install brewfile](#install-brewfile)
 - [x] [Install oh my zsh](#install-oh-my-zsh)
 - [x] [Install dotfiles](#install-dotfiles)
-- [ ] [Config vscode cli](#config-vscode-cli)
+- [x] [Config vscode cli](#config-vscode-cli)
 - [ ] [Config vscode](#config-vscode)
 
 ## Install brew

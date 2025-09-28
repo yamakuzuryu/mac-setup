@@ -30,4 +30,19 @@ echo "Setting up dotfiles..."
 chmod +x ./setup_dotfiles.sh
 ./setup_dotfiles.sh
 
+# Configure VSCode CLI
+echo "Configuring VSCode CLI..."
+if [ -d "/Applications/Visual Studio Code.app" ]; then
+	# Create symbolic link to VS Code CLI in /usr/local/bin
+	if [ ! -f "/usr/local/bin/code" ]; then
+		echo "Creating symbolic link for VS Code CLI..."
+		ln -s "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" "/usr/local/bin/code"
+		echo "VS Code CLI command 'code' has been set up."
+	else
+		echo "VS Code CLI command 'code' is already set up."
+	fi
+else
+	echo "Visual Studio Code is not installed in /Applications. Skipping VS Code CLI setup."
+fi
+
 echo "Setup complete! Please restart your terminal."

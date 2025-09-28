@@ -5,7 +5,7 @@
 ## Run script `./setup_dotfiles.sh`
 ## Choose between iCloud or Google Drive for storing dotfiles
 ## First Run: The script will detect no files in the selected cloud service and copy your dotfiles there
-##           Files are stored without the leading dot and with a .zsh extension (e.g., .zshrc → zshrc.zsh)
+## 	Files are stored without the leading dot and with a .zsh extension (e.g., .zshrc → zshrc.zsh)
 ## Subsequent Runs on Same Computer: The script will skip files already set up
 ## Running on New Computer: The script will detect files in the cloud service and create symlinks
 ## Adding New Dotfiles: Add to the DOTFILES array and run again - only new files will be processed
