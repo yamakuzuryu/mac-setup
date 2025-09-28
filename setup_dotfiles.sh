@@ -83,9 +83,8 @@ fi
 # List of dotfiles to manage
 DOTFILES=(
 	".gitconfig"
-	#".gitconfig-work"
+	# ".gitconfig-work"
 	".gitignore"
-	# ".ssh/config"
 	".zshrc"
 	".zshrc-alias"
 	".zshrc-ohmyzsh"
