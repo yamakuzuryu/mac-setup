@@ -1,5 +1,8 @@
-# Compiled source #
-###################
+#========================#
+# Yamakuzuryu Git Ignore #
+#========================#
+
+# Compiled source
 *.com
 *.class
 *.dll
@@ -7,10 +10,7 @@
 *.o
 *.so
 
-# Packages #
-############
-# it's better to unpack these files and commit the raw source
-# git has its own built in compression methods
+# Packages
 *.7z
 *.dmg
 *.gz
@@ -20,14 +20,12 @@
 *.tar
 *.zip
 
-# Logs and databases #
-######################
+# Logs and databases
 *.log
 *.sql
 *.sqlite
 
-# OS generated files #
-######################
+# OS generated files
 .DS_Store
 .DS_Store?
 ._*
@@ -36,11 +34,9 @@
 ehthumbs.db
 Thumbs.db
 
-# App generated files #
-#######################
+# App generated files
 .vscode
 *.code-workspace
 
-# Other files #
-###############
+# Other files
 jsconfig.json

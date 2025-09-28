@@ -1,3 +1,7 @@
+#==============================#
+# Yamakuzuryu Git Configuration #
+#==============================#
+
 [core]
 	excludesfile = ~/.gitignore
 
@@ -17,5 +21,8 @@
 	trustexitcode = true
 
 [user]
-	email = mbohman@bamboohr.com
+	email = mbohman@gmail.com
 	name = Mike Bohman
+
+[includeIf "gitdir:~/repos/"]
+	path = ~/.gitconfig-work

@@ -1,6 +1,6 @@
-###################################################################
+#================================================================#
 # Yamakuzuryu ZSH - Aliases, Functions, Plugins and Configuration #
-###################################################################
+#================================================================#
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
@@ -23,7 +23,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
 
-# Other Alias Sources
+# Alias
 source $HOME/.zshrc-alias
 
 # ZSH Plugins

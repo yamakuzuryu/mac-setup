@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-##########################################
-# Installer to setup up a Mac, Mike's Way!
-##########################################
+#==========================================#
+# Installer to setup up a Mac, Mike's Way! #
+#==========================================#
 
 # Xcode Command Line Tools (now installed as part of the Homebrew installation)
 # echo "Installing Xcode Command Line Tools..."

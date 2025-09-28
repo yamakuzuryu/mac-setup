@@ -1,6 +1,6 @@
-################################################
-# Brewfile to install MacOS Tools & Applications
-################################################
+#===============================================#
+# Brewfile to install MacOS Tools & Applications #
+#===============================================#
 
 # Taps
 tap 'homebrew/bundle'
