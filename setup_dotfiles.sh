@@ -10,6 +10,9 @@
 ## Running on New Computer: The script will detect files in the cloud service and create symlinks
 ## Adding New Dotfiles: Add to the DOTFILES array and run again - only new files will be processed
 
+# Import utils for text formatting
+source "./utils/formatting.sh"
+
 # Configuration
 BACKUP_DIR="$HOME/dotfiles_backup_$(date +%Y%m%d_%H%M%S)"
 BACKUP_CREATED=false
@@ -18,20 +21,6 @@ SELECTED_CLOUD=""
 # Cloud service paths
 GOOGLE_DRIVE_PATH="$HOME/Google Drive/My Drive"
 ICLOUD_DRIVE_PATH="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
-
-# Text formatting
-BOLD="\033[1m"
-GREEN="\033[0;32m"
-YELLOW="\033[0;33m"
-RED="\033[0;31m"
-BLUE="\033[0;34m"
-CYAN="\033[0;36m"
-RESET="\033[0m"
-
-# Print colored message
-print_message() {
-	echo -e "${2}${BOLD}$1${RESET}"
-}
 
 # Create backup directory if needed
 create_backup_dir_if_needed() {
