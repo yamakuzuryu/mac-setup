@@ -34,6 +34,9 @@ source $HOME/.zshrc-alias
 # Oh My ZSH
 source $HOME/.zshrc-ohmyzsh
 
+# iTerm2 Shell Integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
 # Private
 if [ -f $HOME/.zshrc-private ]; then
   source $HOME/.zshrc-private

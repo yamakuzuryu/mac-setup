@@ -24,3 +24,10 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
 else
 	echo "Oh My Zsh is already installed. Skipping installation."
 fi
+
+# Setup dotfiles
+echo "Setting up dotfiles..."
+chmod +x ./setup_dotfiles.sh
+./setup_dotfiles.sh
+
+echo "Setup complete! Please restart your terminal."
