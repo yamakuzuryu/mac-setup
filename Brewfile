@@ -11,6 +11,7 @@ brew 'mas' # Mac App Store command-line interface
 brew 'mkcert' # Simple tool to make locally trusted development certificates
 brew 'node' # Platform built on V8 to build network applications
 brew 'nvm' # Manage multiple Node.js versions
+brew 'starship' # Cross-shell prompt for astronauts
 brew 'trash-cli' # Command-line interface to the freedesktop.org trashcan
 brew 'wget' # Internet file retriever
 brew 'yarn' # JavaScript package manager
@@ -29,6 +30,7 @@ cask 'disk-inventory-x' # Disk usage utility
 cask 'displaylink' # Drivers for DisplayLink docks, adapters and monitors
 cask 'firefox' # Web browser
 cask 'geotag' # Geo location editor for images
+cask 'ghostty' # Terminal emulator that uses platform-native UI and GPU acceleration
 cask 'google-chrome' # Web browser
 cask 'handbrake-app' # Open-source video transcoder
 cask 'iina' # Free and open-source media player
@@ -47,7 +49,15 @@ cask 'xscope' # Tools for measuring, inspecting & testing on-screen graphics and
 
 # Fonts
 cask 'font-fira-code'
+cask 'font-hack-font'
+cask 'font-jetbrains-mono'
 cask 'font-victor-mono'
+
+# Nerd Fonts
+cask 'font-fira-code-nerd-font'
+cask 'font-hack-nerd-font'
+cask 'font-jetbrains-mono-nerd-font'
+cask 'font-victor-mono-nerd-font'
 
 # Mac App Store
 mas 'Affinity Photo', id: 824183456

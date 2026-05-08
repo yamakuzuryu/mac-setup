@@ -1,0 +1,46 @@
+# ~/.config/starship.toml
+
+add_newline = false
+
+format = """
+$directory$git_branch$git_status$nodejs$python
+$character
+"""
+
+[character]
+success_symbol = "[](bold green)"
+error_symbol = "[](bold red)"
+
+[directory]
+style = "bold cyan"
+format = "[∴ $path]($style) "
+truncation_length = 3
+truncate_to_repo = true
+
+[git_branch]
+symbol = " "
+style = "bold purple"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "red"
+format = "[$all_status$ahead_behind]($style) "
+
+[nodejs]
+format = "[ $version](dimmed green) "
+detect_extensions = ["js", "ts", "tsx", "mjs", "cjs"]
+detect_files = ["package.json"]
+
+[python]
+format = "[🐍 $version](dimmed yellow) "
+detect_extensions = ["py"]
+detect_files = ["pyproject.toml", "requirements.txt", "Pipfile"]
+
+[package]
+disabled = true
+
+[docker_context]
+disabled = true
+
+[kubernetes]
+disabled = true
