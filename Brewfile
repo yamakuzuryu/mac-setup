@@ -38,6 +38,7 @@ cask 'imageoptim' # Tool to optimize images to a smaller size
 cask 'iterm2' # Terminal emulator as alternative to Apple's Terminal app
 cask 'kap' # Open-source screen recorder built with web technology
 cask 'keepingyouawake' # Tool to prevent the system from going into sleep mode
+cask 'macdown-3000' # Markdown editor for macOS
 cask 'menubar-stats' # System monitor with temperature & fans plugins
 cask 'microsoft-edge' # Web browser
 cask 'postman' # Collaboration platform for API development
