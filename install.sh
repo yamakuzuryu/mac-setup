@@ -20,6 +20,17 @@ fi
 print_message "Installing packages from Brewfile..." "$GREEN"
 brew bundle --file=./Brewfile --verbose
 
+# Install Starship configuration
+print_message "Installing Starship configuration..." "$GREEN"
+mkdir -p "$HOME/.config"
+
+if [ -e "$HOME/.config/starship.toml" ]; then
+	print_message "Starship configuration already exists. Skipping." "$YELLOW"
+else
+	cp "./starship.toml" "$HOME/.config/starship.toml"
+	print_message "Starship configuration installed." "$GREEN"
+fi
+
 # Install Oh My Zsh if not already installed
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
 	print_message "Installing Oh My Zsh..." "$GREEN"
