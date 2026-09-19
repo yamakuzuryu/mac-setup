@@ -87,7 +87,6 @@ DOTFILES=(
 	".gitignore"
 	".zshrc"
 	".zshrc-alias"
-	".zshrc-ohmyzsh"
 	# ".zshrc-private"
 )
 

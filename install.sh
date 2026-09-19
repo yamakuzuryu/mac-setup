@@ -10,15 +10,33 @@ source "./utils/formatting.sh"
 # echo "Installing Xcode Command Line Tools..."
 # xcode-select --install
 
-# Install Homebrew if not already installed
-if ! command -v brew &> /dev/null; then
+# Select the native Homebrew prefix
+if [ "$(uname -m)" = "arm64" ]; then
+	BREW_PREFIX="/opt/homebrew"
+else
+	BREW_PREFIX="/usr/local"
+fi
+
+BREW_BIN="$BREW_PREFIX/bin/brew"
+
+# Install Homebrew if the native installation is missing
+if [ ! -x "$BREW_BIN" ]; then
 	print_message "Installing Homebrew..." "$GREEN"
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
+# Make the native Homebrew available to this script
+if [ -x "$BREW_BIN" ]; then
+	eval "$("$BREW_BIN" shellenv)"
+else
+	print_message "Homebrew installation failed." "$RED"
+	exit 1
+fi
+
 # Install packages from Brewfile
 print_message "Installing packages from Brewfile..." "$GREEN"
-brew bundle --file=./Brewfile --verbose
+# "$BREW_BIN" bundle --file=./Brewfile --verbose
+"$BREW_BIN" bundle --file=./Brewfile
 
 # Install Starship configuration
 print_message "Installing Starship configuration..." "$GREEN"
@@ -29,15 +47,6 @@ if [ -e "$HOME/.config/starship.toml" ]; then
 else
 	cp "./starship.toml" "$HOME/.config/starship.toml"
 	print_message "Starship configuration installed." "$GREEN"
-fi
-
-# Install Oh My Zsh if not already installed
-if [ ! -d "$HOME/.oh-my-zsh" ]; then
-	print_message "Installing Oh My Zsh..." "$GREEN"
-	# Use RUNZSH=no to prevent Oh My Zsh from starting a new shell session after installation
-	RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-else
-	print_message "Oh My Zsh is already installed. Skipping installation." "$YELLOW"
 fi
 
 # Setup dotfiles
