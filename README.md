@@ -19,7 +19,7 @@ This repository contains scripts to automate the process of setting up a new Mac
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/bohmanart/mac-setup.git
+   git clone https://github.com/yamakuzuryu/mac-setup.git
    cd mac-setup
    ```
 
@@ -51,4 +51,4 @@ Edit the `Brewfile` to add or remove packages, applications, and VS Code extensi
 ## License
 
 MIT [License](./LICENSE)
-Copyright (c) 2025 Mike Bohman
+Copyright (c) Mike Bohman
