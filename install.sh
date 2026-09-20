@@ -6,10 +6,6 @@
 # Import utils for text formatting
 source "./utils/formatting.sh"
 
-# Xcode Command Line Tools (now installed as part of the Homebrew installation)
-# echo "Installing Xcode Command Line Tools..."
-# xcode-select --install
-
 # Select the native Homebrew prefix
 if [ "$(uname -m)" = "arm64" ]; then
 	BREW_PREFIX="/opt/homebrew"
